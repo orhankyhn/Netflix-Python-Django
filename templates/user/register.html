@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+   <div class="container mt-5">
+    <form action="" method="POST" class="w-50 m-auto border text-light p-4">
+        {% csrf_token %}
+        <label for="">Kullanıcı Adı</label>
+        <input type="text" required value="{{username}}" name="username" id="" class="form-control">
+        <label for="">Email</label>
+        <input type="email" required value="{{email}}" name="email" id="" class="form-control">
+        <label for="">Şifre</label>
+        <input type="password" required name="password1" id="" class="form-control">
+        <label for="">Şifre Onay</label>
+        <input type="password" required name="password2" id="" class="form-control">
+        <input type="submit" value="Kayıt Ol" class="btn btn-primary mt-2">
+    </form>
+   </div>
+{% endblock content %}
