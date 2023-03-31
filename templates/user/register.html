@@ -3,12 +3,16 @@
 
 {% block content %}
    <div class="container mt-5">
-    <form action="" method="POST" class="w-50 m-auto border text-light p-4">
+    <form action="" method="POST" enctype="multipart/form-data" class="w-50 m-auto border text-light p-4">
         {% csrf_token %}
         <label for="">Kullanıcı Adı</label>
         <input type="text" required value="{{username}}" name="username" id="" class="form-control">
         <label for="">Email</label>
         <input type="email" required value="{{email}}" name="email" id="" class="form-control">
+        <label for="">Telefon Numarası</label>
+        <input type="tel" name="telefon" id="" class="form-control">
+        <label for="">Resim</label>
+        <input type="file" name="resim" src="" alt="" class="form-control">
         <label for="">Şifre</label>
         <input type="password" required name="password1" id="" class="form-control">
         <label for="">Şifre Onay</label>

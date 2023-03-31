@@ -12,6 +12,8 @@ def userRegister(request):
     if request.method == 'POST':
         username = request.POST['username']
         email = request.POST['email']
+        telefon = request.POST['telefon']
+        resim = request.FILES['resim']
         password1 = request.POST['password1']
         password2 = request.POST['password2']
 
@@ -33,6 +35,11 @@ def userRegister(request):
                     username = username,
                     email = email,
                     password = password1
+                )
+                Hesap.objects.create(
+                    user = user,
+                    image = resim,
+                    telefon = telefon
                 )
                 user.save()
                 messages.success(request, 'Kullanıcı oluşturuldu!')
